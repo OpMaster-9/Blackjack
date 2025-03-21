@@ -66,7 +66,7 @@ public class CLI {
     public void startGame() {
         game.startGame();
         while (game.getIsPlayerTurn()) {
-            System.out.println(game.getPlayerName(game.getCurrentPlayer()) + " stand or hit?");
+            System.out.println(game.getPlayerName(game.getCurrentPlayer()) + " stand, hit or double?");
             String standOrHit;
             try {
                 standOrHit = br.readLine();
@@ -77,6 +77,8 @@ public class CLI {
                 game.stand();
             } else if (Objects.equals(standOrHit.toLowerCase(), "hit")) {
                 game.hit();
+            } else if (Objects.equals(standOrHit.toLowerCase(), "double")) {
+                game.doubleDown();
             }
         }
     }

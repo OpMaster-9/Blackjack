@@ -90,9 +90,11 @@ public class BlackJack {
         nextTurn();
     }
 
-    /*public void doubleDown() {
-
-    }*/
+    public void doubleDown() {
+        players.get(currentPlayer).draw(deck.draw());
+        System.out.println(players.get(currentPlayer).toString());
+        nextTurn();
+    }
 
     /*public void split() {
 
